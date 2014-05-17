@@ -100,8 +100,8 @@ function run_flake8 {
 
   echo "Running flake8 ..."
   # Just run flake8 in current environment
-  echo ${wrapper} flake8 $FLAGS | tee pep8.txt
-  ${wrapper} flake8 $FLAGS | tee pep8.txt
+  echo ${wrapper} flake8-python2 $FLAGS | tee pep8.txt
+  ${wrapper} flake8-python2 $FLAGS | tee pep8.txt
 }
 
 if [ $never_venv -eq 0 ]

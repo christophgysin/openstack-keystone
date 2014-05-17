@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # Copyright 2013 IBM Corp.
 # Copyright 2012 OpenStack Foundation
 # Copyright 2010 United States Government as represented by the
@@ -46,7 +47,7 @@ def print_help():
 
     Also, make test will automatically use the virtualenv.
     """
-    print help
+    print(help)
 
 
 def main(argv):

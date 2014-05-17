@@ -94,10 +94,10 @@ class InstallVenv(object):
         if not os.path.isdir(self.venv):
             print('Creating venv...', end=' ')
             if no_site_packages:
-                self.run_command(['virtualenv', '-q', '--no-site-packages',
+                self.run_command(['virtualenv2', '-q', '--no-site-packages',
                                  self.venv])
             else:
-                self.run_command(['virtualenv', '-q', self.venv])
+                self.run_command(['virtualenv2', '-q', self.venv])
             print('done.')
         else:
             print("venv already exists...")
@@ -136,7 +136,7 @@ class Distro(InstallVenv):
                     check_exit_code=False).strip())
 
     def install_virtualenv(self):
-        if self.check_cmd('virtualenv'):
+        if self.check_cmd('virtualenv2'):
             return
 
         if self.check_cmd('easy_install'):
@@ -163,7 +163,7 @@ class Fedora(Distro):
                                           check_exit_code=False)[1] == 0
 
     def install_virtualenv(self):
-        if self.check_cmd('virtualenv'):
+        if self.check_cmd('virtualenv2'):
             return
 
         if not self.check_pkg('python-virtualenv'):
